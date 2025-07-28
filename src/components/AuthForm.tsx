@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { useAuth } from '../hooks/useAuth';
-import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-hot-toast';
-import { Mail, Lock, Eye, EyeOff } from 'lucide-react';
+import React, { useState } from "react";
+import { useAuth } from "../hooks/useAuth";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
+import { Mail, Lock, Eye, EyeOff } from "lucide-react";
 
 export function AuthForm() {
   const [isSignUp, setIsSignUp] = useState(false);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const { signIn, signUp } = useAuth();
@@ -18,18 +18,20 @@ export function AuthForm() {
     setLoading(true);
 
     try {
-      const { error } = isSignUp 
+      const { error } = isSignUp
         ? await signUp(email, password)
         : await signIn(email, password);
 
       if (error) {
         toast.error(error.message);
       } else {
-        toast.success(isSignUp ? 'Account created successfully!' : 'Welcome back!');
-        navigate('/');
+        toast.success(
+          isSignUp ? "Confirm link in your Gmail inbox!" : "Welcome back!"
+        );
+        navigate("/");
       }
     } catch (error) {
-      toast.error('An unexpected error occurred');
+      toast.error("An unexpected error occurred");
     } finally {
       setLoading(false);
     }
@@ -40,20 +42,22 @@ export function AuthForm() {
       <div className="max-w-md w-full space-y-8">
         <div className="text-center">
           <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-            {isSignUp ? 'Create Account' : 'Welcome Back'}
+            {isSignUp ? "Create Account" : "Welcome Back"}
           </h2>
           <p className="mt-2 text-gray-600">
-            {isSignUp 
-              ? 'Start creating viral content today' 
-              : 'Sign in to your account'
-            }
+            {isSignUp
+              ? "Start creating viral content today"
+              : "Sign in to your account"}
           </p>
         </div>
 
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="space-y-4">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700 mb-1"
+              >
                 Email Address
               </label>
               <div className="relative">
@@ -73,7 +77,10 @@ export function AuthForm() {
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-gray-700 mb-1"
+              >
                 Password
               </label>
               <div className="relative">
@@ -81,8 +88,8 @@ export function AuthForm() {
                 <input
                   id="password"
                   name="password"
-                  type={showPassword ? 'text' : 'password'}
-                  autoComplete={isSignUp ? 'new-password' : 'current-password'}
+                  type={showPassword ? "text" : "password"}
+                  autoComplete={isSignUp ? "new-password" : "current-password"}
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
@@ -94,7 +101,11 @@ export function AuthForm() {
                   onClick={() => setShowPassword(!showPassword)}
                   className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
                 >
-                  {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                  {showPassword ? (
+                    <EyeOff className="w-5 h-5" />
+                  ) : (
+                    <Eye className="w-5 h-5" />
+                  )}
                 </button>
               </div>
             </div>
@@ -110,11 +121,13 @@ export function AuthForm() {
                 <div className="flex items-center justify-center">
                   <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                   <span className="ml-2">
-                    {isSignUp ? 'Creating Account...' : 'Signing In...'}
+                    {isSignUp ? "Creating Account..." : "Signing In..."}
                   </span>
                 </div>
+              ) : isSignUp ? (
+                "Create Account"
               ) : (
-                isSignUp ? 'Create Account' : 'Sign In'
+                "Sign In"
               )}
             </button>
           </div>
@@ -125,10 +138,9 @@ export function AuthForm() {
               onClick={() => setIsSignUp(!isSignUp)}
               className="text-purple-600 hover:text-purple-500 font-medium transition-colors"
             >
-              {isSignUp 
-                ? 'Already have an account? Sign in' 
-                : "Don't have an account? Sign up"
-              }
+              {isSignUp
+                ? "Already have an account? Sign in"
+                : "Don't have an account? Sign up"}
             </button>
           </div>
         </form>

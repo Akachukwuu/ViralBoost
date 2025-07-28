@@ -26,7 +26,7 @@ export function AuthForm() {
         toast.error(error.message);
       } else {
         toast.success(
-          isSignUp ? "Confirm link in your Gmail inbox!" : "Welcome back!"
+          isSignUp ? "Confirm email address in inbox!" : "Welcome back!"
         );
         navigate("/");
       }

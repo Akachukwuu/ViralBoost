@@ -1,28 +1,28 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { useAuth } from '../hooks/useAuth';
-import { Check, Zap, Crown, ArrowRight } from 'lucide-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import { useAuth } from "../hooks/useAuth";
+import { Check, Zap, Crown, ArrowRight } from "lucide-react";
 
 export function PricingPage() {
   const { user } = useAuth();
 
   const features = {
     free: [
-      '3 content generations per day',
-      'All content types (Posts, Carousels, Reels, Memes)',
-      'All niches supported',
-      'Basic hashtag suggestions',
-      'Copy to clipboard',
+      "3 content generations per day",
+      "All content types (Posts, Carousels, Reels, Memes)",
+      "All niches supported",
+      "Basic hashtag suggestions",
+      "Copy to clipboard",
     ],
     pro: [
-      'Unlimited content generations',
-      'All content types (Posts, Carousels, Reels, Memes)',
-      'All niches supported',
-      'Advanced hashtag research',
-      'Copy to clipboard',
-      'Generation history',
-      'Priority support',
-      'Early access to new features',
+      "Unlimited content generations",
+      "All content types (Posts, Carousels, Reels, Memes)",
+      "All niches supported",
+      "Advanced hashtag research",
+      "Copy to clipboard",
+      "Generation history",
+      "Priority support",
+      "Early access to new features",
     ],
   };
 
@@ -34,7 +34,8 @@ export function PricingPage() {
             Choose Your Plan
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Start free and upgrade when you're ready to scale your content creation
+            Start free and upgrade when you're ready to scale your content
+            creation
           </p>
         </div>
 
@@ -48,7 +49,9 @@ export function PricingPage() {
               <h3 className="text-2xl font-bold text-gray-900 mb-2">Free</h3>
               <div className="text-4xl font-bold text-gray-900 mb-2">
                 $0
-                <span className="text-lg font-normal text-gray-600">/month</span>
+                <span className="text-lg font-normal text-gray-600">
+                  /month
+                </span>
               </div>
               <p className="text-gray-600">Perfect for getting started</p>
             </div>
@@ -86,7 +89,9 @@ export function PricingPage() {
               <h3 className="text-2xl font-bold mb-2">Pro</h3>
               <div className="text-4xl font-bold mb-2">
                 $10
-                <span className="text-lg font-normal text-purple-200">/month</span>
+                <span className="text-lg font-normal text-purple-200">
+                  /month
+                </span>
               </div>
               <p className="text-purple-200">For serious content creators</p>
             </div>
@@ -100,13 +105,16 @@ export function PricingPage() {
               ))}
             </ul>
 
-            <Link
-              to={user ? "/generate" : "/auth"}
+            {/* Flutterwave payment link */}
+            <a
+              href="https://sandbox.flutterwave.com/pay/signalpro-advanced"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full bg-white text-purple-600 py-3 px-6 rounded-lg font-bold hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 flex items-center justify-center space-x-2"
             >
               <span>Upgrade to Pro</span>
               <ArrowRight className="w-4 h-4" />
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -121,7 +129,9 @@ export function PricingPage() {
                 Can I cancel my Pro subscription anytime?
               </h3>
               <p className="text-gray-600">
-                Yes, you can cancel your Pro subscription at any time. You'll continue to have Pro access until the end of your billing period.
+                Yes, you can cancel your Pro subscription at any time. You'll
+                continue to have Pro access until the end of your billing
+                period.
               </p>
             </div>
             <div className="bg-white rounded-lg p-6 shadow-md">
@@ -129,7 +139,8 @@ export function PricingPage() {
                 What happens to my generations if I downgrade?
               </h3>
               <p className="text-gray-600">
-                Your generation history will be preserved, but you'll be limited to 3 generations per day going forward.
+                Your generation history will be preserved, but you'll be limited
+                to 3 generations per day going forward.
               </p>
             </div>
             <div className="bg-white rounded-lg p-6 shadow-md">
@@ -137,7 +148,8 @@ export function PricingPage() {
                 Do you offer refunds?
               </h3>
               <p className="text-gray-600">
-                We offer a 30-day money-back guarantee. If you're not satisfied with ViralBoost Pro, contact us for a full refund.
+                We offer a 30-day money-back guarantee. If you're not satisfied
+                with ViralBoost Pro, contact us for a full refund.
               </p>
             </div>
           </div>

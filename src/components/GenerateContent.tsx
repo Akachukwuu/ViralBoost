@@ -544,7 +544,7 @@ function generateMockHashtags(formData: FormData): string {
   const niche = formData.niche as keyof typeof nicheHashtags;
   return (
     nicheHashtags[niche] ||
-    "#viral #content #socialmedia #instagram #facebook #trending #growth #engagement #influence #creator"
+    "#viral #content #socialmedia #instagram #fyp #facebook #trending #growth #engagement #influence #creator"
   );
 }
 

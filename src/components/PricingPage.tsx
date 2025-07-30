@@ -106,7 +106,7 @@ export function PricingPage() {
 
             {/* Flutterwave payment link */}
             <a
-              href="https://sandbox.flutterwave.com/pay/signalpro-advanced"
+              href="https://flutterwave.com/pay/pkyovddmaovb"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full bg-white text-purple-600 py-3 px-6 rounded-lg font-bold hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 flex items-center justify-center space-x-2"

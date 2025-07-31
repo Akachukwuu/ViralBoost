@@ -189,7 +189,7 @@ export function GenerateContent() {
               <>
                 <Zap className="w-5 h-5 text-purple-500" />
                 <span className="text-sm font-medium text-gray-700">
-                  {todayCount}/3 generations used today
+                  {todayCount}/1 generations used today
                 </span>
               </>
             )}

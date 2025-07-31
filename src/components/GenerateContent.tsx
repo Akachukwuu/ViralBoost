@@ -74,7 +74,7 @@ export function GenerateContent() {
     "Video Script",
   ];
 
-  const canGenerate = profile?.subscription_tier === "pro" || todayCount < 3;
+  const canGenerate = profile?.subscription_tier === "pro" || todayCount < 1;
 
   const handleInputChange = (field: keyof FormData, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
